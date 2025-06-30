@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/output.css" />
+    <title>Country Explorer</title>
+  </head>
+  <body class="bg-blue md:bg-amber-100 md:grid md:place-items-center">
+    <main
+      class="container p-6 space-y-4 md:my-32 md:rounded-lg md:w-xl md:bg-blue"
+    >
+      <!-- Title and Switch Section -->
+      <section
+        id="title"
+        class="flex flex-row space-x-2 justify-between items-center"
+      >
+        <!-- Title -->
+        <h1 class="font-bold text-white text-2xl md:text-3xl">
+          Country Explorer
+        </h1>
+
+        <!-- Switch container -->
+        <div
+          id="switch"
+          class="flex flex-row px-4 py-2 space-x-3 bg-transparentBlue rounded-full justify-center items-center"
+        >
+          <!-- libra/balance icon -->
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512"
+              class="fill-white size-6"
+            >
+              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M384 32l128 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L398.4 96c-5.2 25.8-22.9 47.1-46.4 57.3L352 448l160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-192 0-192 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l160 0 0-294.7c-23.5-10.3-41.2-31.6-46.4-57.3L128 96c-17.7 0-32-14.3-32-32s14.3-32 32-32l128 0c14.6-19.4 37.8-32 64-32s49.4 12.6 64 32zm55.6 288l144.9 0L512 195.8 439.6 320zM512 416c-62.9 0-115.2-34-126-78.9c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C627.2 382 574.9 416 512 416zM126.8 195.8L54.4 320l144.9 0L126.8 195.8zM.9 337.1c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C242 382 189.7 416 126.8 416S11.7 382 .9 337.1z"
+              />
+            </svg>
+          </div>
+
+          <!-- Switch -->
+          <div
+            id="oval"
+            class="grid place-items-center justify-end w-8 h-6 rounded-full bg-kanoBlue"
+          >
+            <div id="circle" class="w-5 h-5 rounded-full bg-white"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Bar -->
+      <section id="search-bar">
+        <!-- search input -->
+        <div
+          id="search-input"
+          class="flex flex-row justify-between items-center bg-transparentBlue rounded-lg px-4 py-2"
+        >
+          <div class="flex flex-row space-x-3">
+            <!-- search icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="fill-white size-5"
+            >
+              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              />
+            </svg>
+            <input
+              type="text"
+              placeholder=" Search Region"
+              class="outline-blue placeholder:font-light placeholder:text-lg placeholder:text-white border-none outline-none"
+            />
+          </div>
+
+          <button class="text-lg font-light text-white">Sort</button>
+        </div>
+      </section>
+
+      <!-- Region Filter -->
+      <section
+        id="filter-region"
+        class="flex flex-row justify-between items-center"
+      >
+        <h3 class="text-white text-xl">Filter by Region</h3>
+
+        <!-- caret icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+          class="fill-white size-5"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+          />
+        </svg>
+      </section>
+
+      <!-- Regions -->
+      <section id="regions" class="grid grid-cols-2 gap-6">
+        <!-- Bauchi State -->
+        <div
+          id="state bauchi"
+          class="bg-bauchiGreen grid place-items-center text-center rounded-xl text-white"
+        >
+          <!-- bauchi state logo -->
+          <div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/BAUCHI_state_coat.png/330px-BAUCHI_state_coat.png"
+              alt="Bauchi State Logo"
+              class="size-13"
+            />
+          </div>
+          <h2 class="font-semibold text-2xl">Bauchi</h2>
+          <p class="font-light text-white text-sm mb-4">Agriculture Tourism</p>
+        </div>
+
+        <!-- Kano State -->
+        <div
+          id="state kano"
+          class="bg-kanoBlue grid place-items-center text-center rounded-xl text-white"
+        >
+          <!-- kano state logo -->
+          <div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Seal_of_Kano.png/1158px-Seal_of_Kano.png"
+              alt="Kano State Logo"
+              class="size-13"
+            />
+          </div>
+          <h2 class="font-semibold text-2xl">Kano</h2>
+          <p class="font-light text-white text-sm mb-4">Agriculture Tourism</p>
+        </div>
+
+        <!-- Kano State info -->
+        <div
+          id="state kano-info"
+          class="bg-kanoBlue grid place-items-center text-center rounded-xl text-white"
+        >
+          <h2 class="font-semibold text-2xl pt-2">Kano</h2>
+          <p
+            class="font-light text-white ext-sm pb-1 border-b-1 border-white-50"
+          >
+            Agriculture Tourism
+          </p>
+          <p class="text-start font-light px-4">
+            <strong class="text-lg">Population</strong> 6,530,000
+          </p>
+        </div>
+
+        <!-- Lagos State -->
+        <div
+          id="state lagos"
+          class="bg-lagosGreen grid place-items-center text-center rounded-xl text-white"
+        >
+          <!-- Lagos state logo -->
+          <div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Lagos_Seal.svg/250px-Lagos_Seal.svg.png"
+              alt="Lagos State Logo"
+              class="size-13"
+            />
+          </div>
+          <h2 class="font-semibold text-2xl">Lagos</h2>
+          <p class="font-light text-white text-sm mb-4">Local Industries</p>
+        </div>
+
+        <!-- Oyo State -->
+        <div
+          id="state oyo"
+          class="bg-oyoBrown grid place-items-center text-center rounded-xl text-white"
+        >
+          <!-- Oyo sate logo -->
+          <div>
+            <img
+              src="https://usercontent.one/wp/yorubalessons.com/wp-content/uploads/2023/08/png-clipart-united-states-oyo-oyo-oyo-state-house-of-assembly-government-election-united-states.png?media=1727444637"
+              alt="Oyo State Logo"
+              class="size-13"
+            />
+          </div>
+          <h2 class="font-semibold text-2xl">Oyo</h2>
+          <p class="font-light text-white text-sm mb-4">Local Industries</p>
+        </div>
+
+        <!-- Oyo State-info -->
+        <div
+          id="state oyo-info"
+          class="bg-kanoBlue grid place-items-center text-center rounded-xl text-white"
+        >
+          <h2 class="font-semibold text-2xl pt-2">Oyo</h2>
+          <p
+            class="font-light text-white ext-sm pb-1 border-b-1 border-white-50"
+          >
+            Agriculture Tourism
+          </p>
+          <p class="text-start font-light px-4">
+            <strong class="text-lg">Population</strong> 6,530,000
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <path
+    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+  />
+</svg> -->
+<!-- Hamburger Menu -->
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <path
+    d="M32 288c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 288zm0-128c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 160z"
+  />
+</svg> -->
+<!-- Grip Lines -->
